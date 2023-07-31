@@ -241,8 +241,8 @@ def create_database(database_name, conn_params):
 # create_database(new_database_name, conn_params)
 
 # Run the code
-create_table(conn_params)
-insert_values(conn_params)
+# create_table(conn_params)
+# insert_values(conn_params)
 # drop_table(conn_params)
 
 num_tables = get_number_of_tables(conn_params)
