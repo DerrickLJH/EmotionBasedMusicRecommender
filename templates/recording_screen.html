@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodSync</title>
+    <link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <script>
+        let timerInterval;
+        let recordingTime = 10; // Set the recording time limit in seconds
+
+        function handleRecording() {
+            var caption = document.getElementById("caption");
+            var button = document.getElementById("record-button");
+
+            if (button.innerText === "Record") {
+                // Start recording
+                button.innerText = "Stop";
+                caption.innerHTML = "<img class='record-icon' src='{{ url_for('static', filename='rec_icon.png') }}' alt='Recording Icon' />"
+                caption.innerHTML += "Duration: <span id='timer'>10</span> seconds left.";
+                startRecording();
+            }
+            else if (button.innerText === "Stop"){
+                stopRecording();
+            }
+            else {
+                button.innerText = "Record";
+                caption.innerText = "Share with us about your day!";
+            }
+        }
+
+        function startRecording() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/start_recording", true);
+            xhr.send();
+            startTimer();
+        }
+
+        function stopRecording() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/stop_recording", true);
+            xhr.send();
+            clearInterval(timerInterval); // Stop the timer
+            window.location.href = "{{ url_for('loading_screen') }}";
+        }
+
+        function startTimer() {
+            var timer = document.getElementById("timer");
+            recordingTime = 10;
+
+            timerInterval = setInterval(function() {
+                recordingTime--;
+                timer.innerText = recordingTime.toString();
+
+                if (recordingTime <= 0) {
+                    clearInterval(timer);
+                    document.getElementById("timer").innerText = "0";
+                    document.getElementById("record-button").innerText = "Record";
+                    stopRecording();
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <a href="/" class="reanalyze-link"><img src="{{ url_for('static', filename='left-arrow.png') }}" alt="back" class="back-button-icon">Back</a>
+    <div class="rec-container">
+        <p class="caption"><span id="caption">Share with us about your day!</span></p>
+        <div id="cameraContainer">
+            <img class="video_feed" src="{{ url_for('video_feed') }} "/>
+        </div>
+        <div>
+            <button class="record-button" id="record-button" onclick="handleRecording()">Record</button>
+        </div>
+    </div>
+</body>
+</html>

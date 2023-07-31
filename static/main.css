@@ -1,0 +1,573 @@
+body {
+  background: black;
+  margin: 0;
+  }
+
+.text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.homepage-text-1 {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 26.4px;
+  font-size: 130px;
+  text-align: center;
+
+}
+
+.homepage-text-2 {
+  color: #BA77FE;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 26.4px;
+  font-size: 150px;
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.homepage-text-3 {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 200;
+  line-height: 26.4px;
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 100px;
+}
+
+.purple-text{
+  color: #BA77FE;
+}
+
+.white-text{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 50;
+  margin-bottom: 0px;
+}
+
+.mood-text-happy{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, #FAB60D, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-sad{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, blue, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-angry{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, red, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-calm{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, red, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-disgust{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, green, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-fear{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, purple, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-surprised{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, orange, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mood-text-neutral{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 150px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background: linear-gradient(to bottom, grey, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+th{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  font-size: 17px;
+  font-weight: 70;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border: none;
+}
+
+td{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  border: none;
+
+}
+
+.small-image {
+    width: 60px;  /* Set the desired width */
+    height: auto;  /* Allow the height to adjust proportionally */
+}
+
+.table {
+    background-color: #1D1C23;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tracks-row:hover {
+    background-color: #302F36;
+}
+
+.track-name{
+    margin-left: 20px;
+}
+
+.tracks-row {
+    transition: background-color 0.3s;
+}
+
+.tracks-row.playing {
+    background-image: linear-gradient(to right, #783FE4, #BA77FE);
+}
+
+.song-details{
+  text-align: center;
+  margin-left: 10px;
+  padding: 20px;
+}
+
+
+.play-button,
+.pause-button {
+        width: 50px;
+        height: 50px;
+        border: none;
+        padding-bottom: 0px;
+        }
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.text-container{
+    margin:0px;
+    padding:0px;
+}
+
+.loading-screentext-1{
+    color: white;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 200;
+    line-height: 26.4px;
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.back-button-icon{
+    width: 20px;
+    height: 20px;
+    border: none;
+    padding-bottom: 0px;
+}
+
+.above-table-text{
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 10;
+    line-height: 26.4px;
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.reanalyze-link {
+    padding: 10px 20px;
+    background-color: #783FE4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    position: absolute; /* Add position absolute */
+    top: 20px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+}
+
+.reanalyze-link:hover {
+    background-color: #BA77FE;
+}
+
+.reanalyze-link img {
+    margin-right: 5px;
+}
+
+.mood-selection-button {
+    color: white;
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 200;
+    line-height: 26.4px;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 150px;
+    margin: 60px;
+    padding: 10px 20px;
+    background-color: #783FE4;
+    border-radius: 20px;
+    height: 100px;
+
+}
+
+.mood-selection-button:hover {
+    background-color: #BA77FE;
+    cursor: pointer;
+}
+
+.select-text{
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 50;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.selection-container {
+            display: flex;
+            flex-direction: column; /* Added */
+            justify-content: center;
+            align-items: center;
+}
+
+.loading-text{
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 50;
+    margin-top: 50px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.loading-container {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+.loader-container {
+    display: flex;
+    flex-direction: column; /* Display the loader below the text */
+    align-items: center; /* Center items horizontally */
+}
+
+.loader {
+  margin: auto;
+  margin-top: 30px;
+  width: 175px;
+  height: 100px;
+}
+.loader span {
+  display: block;
+  background: #ccc;
+  width: 7px;
+  height: 20%;
+  border-radius: 14px;
+  margin-right: 5px;
+  float: left;
+  margin-top: 25%;
+}
+.loader span:last-child {
+  margin-right: 0px;
+}
+.loader span:nth-child(1) {
+  animation: load 2.5s 1.4s infinite linear;
+}
+.loader span:nth-child(2) {
+  animation: load 2.5s 1.2s infinite linear;
+}
+.loader span:nth-child(3) {
+  animation: load 2.5s 1s infinite linear;
+}
+.loader span:nth-child(4) {
+  animation: load 2.5s 0.8s infinite linear;
+}
+.loader span:nth-child(5) {
+  animation: load 2.5s 0.6s infinite linear;
+}
+.loader span:nth-child(6) {
+  animation: load 2.5s 0.4s infinite linear;
+}
+.loader span:nth-child(7) {
+  animation: load 2.5s 0.2s infinite linear;
+}
+.loader span:nth-child(8) {
+  animation: load 2.5s 0s infinite linear;
+}
+.loader span:nth-child(9) {
+  animation: load 2.5s 0.2s infinite linear;
+}
+.loader span:nth-child(10) {
+  animation: load 2.5s 0.4s infinite linear;
+}
+.loader span:nth-child(11) {
+  animation: load 2.5s 0.6s infinite linear;
+}
+.loader span:nth-child(12) {
+  animation: load 2.5s 0.8s infinite linear;
+}
+.loader span:nth-child(13) {
+  animation: load 2.5s 1s infinite linear;
+}
+.loader span:nth-child(14) {
+  animation: load 2.5s 1.2s infinite linear;
+}
+.loader span:nth-child(15) {
+  animation: load 2.5s 1.4s infinite linear;
+}
+
+@keyframes load {
+  0% {
+    background: #9c89ff;
+    margin-top: 25%;
+    height: 20%;
+  }
+  50% {
+    background: #7E38B7;
+    height: 100%;
+    margin-top: 0%;
+  }
+  100% {
+    background: #541675;
+    height: 20%;
+    margin-top: 25%;
+  }
+}
+
+.mood-text-2{
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.cameraContainer {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+}
+.caption {
+  display: flex;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 200;
+  line-height: 26.4px;
+  text-align: center;
+  margin-bottom: 100px;
+  vertical-align: middle;
+}
+
+.record-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.video_feed {
+  max-width: 100%; /* Set the max width to 100% for responsiveness */
+  max-height: 100%; /* You can set a max height if needed */
+  border-radius: 10px;
+}
+
+.timer, .recording-status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.rec-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.record-button {
+  padding: 10px 20px;
+  background-color: #783FE4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin-top: 50px ;
+}
+
+.record-button:hover {
+    background-color: #BA77FE;
+}
+
+.allow-button {
+  padding: 10px 20px;
+  background-color: #783FE4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin-top: 50px ;
+}
+
+.allow-button:hover {
+    background-color: #BA77FE;
+}
+
+.container {
+    text-align: center;
+    margin: 300px; /* Adjust the margin as needed */
+}
+
+.progress-bar {
+    width: 50%;
+    height: 20px;
+    background-color: #f2f2f2;
+    margin: 20px auto; /* Center the progress bar horizontally */
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #A46BFA;
+    transition: width 0.5s linear;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes fillProgress {
+    0% {
+        width: 0%;
+        background: #FBD4FF;
+    }
+
+    100% {
+        width: 100%;
+        background: #6D3CB6;
+        box-shadow: 0 0 40px #6D3CB6;
+    }
+}
+
+.mood-info{
+    margin-top: 50px;
+}

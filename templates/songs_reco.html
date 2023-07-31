@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MoodSync</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script>
+        var currentAudio = null;
+
+        function toggleAudio(index, button) {
+            var audio = document.getElementById('audio' + JSON.parse(index));
+            var playImage = document.getElementById('playImage' + JSON.parse(index));
+            var pauseImage = document.getElementById('pauseImage' + JSON.parse(index));
+            var row = button.parentNode.parentNode; // Get the parent row
+
+            if (audio === currentAudio && !audio.paused) {
+                audio.pause();
+                audio.currentTime = 0; // Reset audio to the beginning
+                playImage.style.display = 'inline-block';
+                pauseImage.style.display = 'none';
+                row.classList.remove('playing'); // Remove 'playing' class from the row
+                currentAudio = null;
+            } else {
+                if (currentAudio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0; // Reset audio to the beginning
+                    var currentRow = currentAudio.parentNode.parentNode;
+                    var currentPauseImage = document.getElementById('pauseImage' + currentAudio.id.slice(5));
+                    var currentPlayImage = document.getElementById('playImage' + currentAudio.id.slice(5));
+                    currentPauseImage.style.display = 'none';
+                    currentPlayImage.style.display = 'inline-block';
+                    currentRow.classList.remove('playing'); // Remove 'playing' class from the current row
+                }
+
+                audio.play();
+                playImage.style.display = 'none';
+                pauseImage.style.display = 'inline-block';
+                row.classList.add('playing'); // Add 'playing' class to the row
+                currentAudio = audio;
+            }
+        }
+    </script>
+</head>
+<body>
+    {% if mood_from_model == 'Happy' or mood_from_model == 'Disgust' %}
+        <!-- Redirect to the main page -->
+        <a href="/" class="reanalyze-link">
+            <img src="{{ url_for('static', filename='left-arrow.png') }}" alt="back" class="back-button-icon">Back
+        </a>
+    {% else %}
+        <!-- Redirect to the song_type_choice page -->
+        <a href="/song_type_choice" class="reanalyze-link">
+            <img src="{{ url_for('static', filename='left-arrow.png') }}" alt="back" class="back-button-icon">Back
+        </a>
+    {% endif %}
+        <div class="mood-info">
+        {% if track_info_list %}
+            <h1 class="white-text">Your current mood</h1>
+            <h1 class="mood-text {% if mood_from_model == 'Happy' %}mood-text-happy{% elif mood_from_model == 'Sad' %}mood-text-sad{% elif mood_from_model == 'Angry' %}mood-text-angry{% elif mood_from_model == 'Disgust' %}mood-text-disgust{% elif mood_from_model == 'Fear' %}mood-text-fear{% elif mood_from_model == 'Surprise' %}mood-text-surprised{% elif mood_from_model == 'Neutral' %}mood-text-neutral{% endif %}">
+                {{ mood_from_model }}
+            </h1>
+            <p class="mood-text-2">The selected playlist mood is {{ selected_playlist }}</p>
+        </div>
+        <p class="above-table-text">Recommended Songs</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Album</th>
+                    <th scope="col">Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for track_info in track_info_list %}
+                <tr class="tracks-row">
+                    <td class="song-details">
+                        {% if track_info.preview_url %}
+                            <audio id="audio{{ loop.index }}">
+                                <source src="{{ track_info.preview_url }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <button onclick="toggleAudio({{ loop.index|tojson }}, this)">
+                                <img id="playImage{{ loop.index }}" src="{{ url_for('static', filename='play.png') }}" alt="Play" class="play-button">
+                                <img id="pauseImage{{ loop.index }}" src="{{ url_for('static', filename='pause.png') }}" alt="Pause" class="pause-button" style="display: none;">
+                            </button>
+                        {% else %}
+                            No Preview Available
+                        {% endif %}
+                    </td>
+                    {% if track_info.image_url %}
+                        <td>
+                            <img src="{{ track_info.image_url }}" alt="Album Image" class="small-image">
+                        {% endif %}
+                        </td>
+                    <td><span class="song-title">{{ track_info.track_name }}</span></td>
+                    <td class="song-details">{{ track_info.artist }}</td>
+                    <td class="song-details">{{ track_info.album }}</td>
+                    <td class="song-details">{{ track_info.genre }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h1>No happy songs found.</h1>
+    {% endif %}
+</body>
+</html>

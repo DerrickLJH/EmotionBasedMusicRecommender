@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodSync</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script>
+        function updateProgressBar() {
+            var progressBarFill = document.querySelector('.progress-bar-fill');
+            var progressBar = document.querySelector('.progress-bar');
+
+            // Make an AJAX request to get the progress from the server
+            fetch('/model_processing_progress')
+                .then(response => response.json())
+                .then(progress => {
+                    progressBarFill.style.width = progress + '%';
+
+                    // If progress is not 100%, keep updating the progress bar
+                    if (progress < 100) {
+                        setTimeout(updateProgressBar, 200); // Adjust the interval as needed
+                    } else {
+                        // Progress is 100%, redirect to the song type choice page
+                        window.location.href = "/song_type_choice";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating progress:', error);
+                });
+        }
+
+        window.onload = updateProgressBar;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="loading-screentext-1">Analyzing your <span class="purple-text">mood</span></h1>
+        <div class="progress-bar">
+            <div class="progress-bar-fill"></div>
+        </div>
+    </div>
+</body>
+</html>

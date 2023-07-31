@@ -1,0 +1,51 @@
+<!-- camera_permission.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MoodSync</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+</head>
+<body>
+    <div class="rec-container">
+        <p class="caption"><span id="caption">Allow your webcam to start your <span class="purple-text">MoodSync</span> Journey!</span></p>
+        <div>
+            <button id="allowBtn" class="allow-button">Allow</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkCameraPermission();
+        });
+
+        function checkCameraPermission() {
+            navigator.permissions.query({ name: 'camera' })
+                .then(function(permissionStatus) {
+                    if (permissionStatus.state === 'granted') {
+                        // Camera access already granted, redirect to next page
+                        window.location.href = "/recording_screen";
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error checking camera permission:', error);
+                    // Handle error if necessary
+                });
+        }
+
+        document.getElementById('allowBtn').addEventListener('click', function() {
+            // Ask for webcam access
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    // Redirect to the next page if access is granted
+                    window.location.href = "/recording_screen";
+
+                })
+                .catch(function(error) {
+                    console.error('Error accessing webcam:', error);
+                    // Handle error or show a message if the user denies access
+                });
+        });
+
+    </script>
+</body>
+</html>

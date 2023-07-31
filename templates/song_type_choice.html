@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MoodSync</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script>
+    function showLoading() {
+        var loaderContainer = document.getElementById('loaderContainer');
+        loaderContainer.style.display = 'block';
+    }
+
+    function hideButtons() {
+        const buttons = document.getElementsByClassName('mood-selection-button');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = 'none';
+        }
+    }
+
+    function selectMood(mood) {
+        showLoading();
+        document.getElementById('songsRecoForm').selected_mood.value = mood;
+        document.getElementById('songsRecoForm').submit();
+    }
+
+    // Add event listeners to buttons
+    const buttons = document.getElementsByClassName('mood-selection-button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', () => {
+            hideButtons();
+            selectMood(event.target.value);
+        });
+    }
+
+    function submitHappyForm() {
+        {% if mood_from_model == 'Happy' %}
+            showLoading();
+            document.getElementById('songsRecoForm').submit();
+        {% endif %}
+    }
+
+    function submitDisgustForm() {
+        {% if mood_from_model == 'Disgust' %}
+            showLoading();
+            document.getElementById('songsRecoForm').submit();
+        {% endif %}
+    }
+</script>
+</head>
+
+<body onload="{% if mood_from_model == 'Happy' %}submitHappyForm();{% elif mood_from_model == 'Disgust' %}submitDisgustForm();{% endif %}">
+    <a href="/" class="reanalyze-link"><img src="{{ url_for('static', filename='left-arrow.png') }}" alt="back" class="back-button-icon">Back</a>
+    <div class="mood-info">
+    {% if mood_from_model %}
+        <h1 class="white-text">Your current mood</h1>
+        <h1 class="mood-text {% if mood_from_model == 'Happy' %}mood-text-happy{% elif mood_from_model == 'Sad' %}mood-text-sad{% elif mood_from_model == 'Angry' %}mood-text-angry{% elif mood_from_model == 'Disgust' %}mood-text-disgust{% elif mood_from_model == 'Fear' %}mood-text-fear{% elif mood_from_model == 'Surprise' %}mood-text-surprised{% elif mood_from_model == 'Neutral' %}mood-text-neutral{% endif %}">
+            {{ mood_from_model }}
+        </h1>
+    {% else %}
+        <h1 class="white-text">No emotions found.</h1>
+    {% endif %}
+    </div>
+    <div class="selection-container">
+        <form id="songsRecoForm" action="/songs_reco" method="POST">
+            {% if mood_from_model == 'Happy' %}
+                <input type="hidden" name="selected_mood" value="Happy">
+                <script>showLoading();</script>
+            {% elif mood_from_model == 'Disgust' %}
+                <input type="hidden" name="selected_mood" value="Disgust">
+                <script>showLoading();</script>
+            {% elif mood_from_model == 'Surprise' %}
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Energetic" onclick="showLoading()">Energetic</button>
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Happy" onclick="showLoading()">Happy</button>
+            {% elif mood_from_model == 'Sad' %}
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Sad" onclick="showLoading()">Sad</button>
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Happy" onclick="showLoading()">Happy</button>
+            {% elif mood_from_model == 'Angry' or  mood_from_model == 'Fear' %}
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Calm" onclick="showLoading()">Calm</button>
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Energetic" onclick="showLoading()">Energetic</button>
+            {% elif mood_from_model == 'Neutral' %}
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Calm" onclick="showLoading()">Calm</button>
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Energetic" onclick="showLoading()">Energetic</button>
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Sad" onclick="showLoading()">Sad</button>
+                <button type="submit" class="mood-selection-button" name="selected_mood" value="Happy" onclick="showLoading()">Happy</button>
+           {% endif %}
+        </form>
+        <div class="loader-container" id="loaderContainer" style="display: none;">
+            <h1 class="loading-text">Processing your songs now</h1>
+            <br>
+            <div id="loader" class="loader">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
