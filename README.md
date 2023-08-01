@@ -60,7 +60,7 @@ MoodSync uses OpenCV Library to allow users to record a video of their facial ex
 
 ### Built With
 
-[![Flask][Flask]][Flask-url] [![Python][Python]][Python-url] [![OpenCV][OpenCV]][OpenCV-url] [![Tensorflow][Tensorflow]][Tensorflow-url][![MariaDB][MariaDB]][MariaDB-url] ![HTML5][HTML5] ![JavaScript][JavaScript]
+[![Flask][Flask]][Flask-url] [![Python][Python]][Python-url] [![OpenCV][OpenCV]][OpenCV-url] [![Tensorflow][Tensorflow]][Tensorflow-url][![MariaDB][MariaDB]][MariaDB-url] ![HTML5] ![JavaScript]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -115,9 +115,9 @@ This is an example of how to list things you need to use the software and how to
 ## Usage
 
 <div style="display:flex;">
-  <img src="static/homepage.png" alt="Image 1" width="30%" />
-  <img src="static/recordingpage.png" alt="Image 2" width="30%" />
-  <img src="static/songsrecopage.png" alt="Image 3" width="30%" />
+  <img src="static/homepage.png" alt="Image 1" width="32%" />
+  <img src="static/recordingpage.png" alt="Image 2" width="32%" />
+  <img src="static/songsrecopage.png" alt="Image 3" width="32%" />
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

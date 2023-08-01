@@ -1,3 +1,4 @@
+# Requirements without Version Specifiers #
 flask
 python-dotenv
 requests
@@ -5,4 +6,6 @@ pandas
 mysql-connector-python
 opencv-python
 matplotlib
-tensorflow
+
+# Requirements with Version Specifiers #
+tensorflow==2.12.0
