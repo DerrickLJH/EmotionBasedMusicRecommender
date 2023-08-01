@@ -109,15 +109,15 @@ This is an example of how to list things you need to use the software and how to
 
 6. Add your own spotify developer CLIENT_ID and CLIENT_SECRET into the env file.
 
-   !(static/api_cred.png)
+   ![api_cred](static/api_cred.png)
 
 7. Open a terminal or command prompt, navigate to the directory containing the main.py file, and execute the file using the Python interpreter.
 
-   !(static/main.py_terminal.png)
+   ![main.py Terminal](static/main.py_terminal.png)
 
    Should output as:
 
-   !(static/main.py_output.png)
+   ![main.py Output](static/main.py_output.png)
 
 
 
