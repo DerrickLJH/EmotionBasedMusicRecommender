@@ -101,6 +101,9 @@ This is an example of how to list things you need to use the software and how to
 
    ![exe-screenshot2]
 
+   Open a terminal or command prompt, navigate to the directory containing the backend.py file, and execute the file using the Python interpreter.
+   ![Backend.py Terminal](static/backend.py_terminal.png)
+
 
 [//]: # (3. Enter your Spotify Web API in `.env`)
 
