@@ -80,7 +80,7 @@ To get a local copy up and running follow these simple example steps.
 This is an example of how to list things you need to use the software and how to install them.
 * Install packages with pip
   ```sh
-  pip install -requirements.txt
+  pip install -r requirements.txt
   ```
 
 ### Installation
@@ -102,7 +102,24 @@ This is an example of how to list things you need to use the software and how to
    ![exe-screenshot2]
 
    Open a terminal or command prompt, navigate to the directory containing the backend.py file, and execute the file using the Python interpreter.
+
    ![Backend.py Terminal](static/backend.py_terminal.png)
+
+
+
+6. Add your own spotify developer CLIENT_ID and CLIENT_SECRET into the env file.
+
+   !(static/api_cred.png)
+
+7. Open a terminal or command prompt, navigate to the directory containing the main.py file, and execute the file using the Python interpreter.
+
+   !(static/main.py_terminal.png)
+
+   Should output as:
+
+   !(static/main.py_output.png)
+
+
 
 
 [//]: # (3. Enter your Spotify Web API in `.env`)
