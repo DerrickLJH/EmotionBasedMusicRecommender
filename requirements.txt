@@ -1,11 +1,11 @@
 # Requirements without Version Specifiers #
-flask
-python-dotenv
-requests
-pandas
-mysql-connector-python
-opencv-python
-matplotlib
+flask==2.3.2
+python-dotenv==1.0.0
+requests==2.31.0
+pandas==2.0.3
+mysql-connector-python==8.1.0
+opencv-python==4.8.0.74
+matplotlib==3.7.2
 
 # Requirements with Version Specifiers #
-tensorflow==2.12.0
+tensorflow==2.13.0

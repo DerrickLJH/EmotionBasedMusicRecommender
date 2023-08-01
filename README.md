@@ -4,6 +4,8 @@
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -128,13 +130,16 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/DerrickLJH/EmotionBasedMusicRecommender.svg?style=for-the-badge
 [contributors-url]: https://github.com/DerrickLJH/EmotionBasedMusicRecommender/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/DerrickLJH/EmotionBasedMusicRecommender.svg?style=for-the-badge
 [forks-url]: https://github.com/DerrickLJH/EmotionBasedMusicRecommender/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/DerrickLJH/EmotionBasedMusicRecommender.svg?style=for-the-badge
 [stars-url]: https://github.com/DerrickLJH/EmotionBasedMusicRecommender/stargazers
-
+[issues-shield]: https://img.shields.io/github/issues/DerrickLJH/EmotionBasedMusicRecommender.svg?style=for-the-badge
+[issues-url]: https://github.com/DerrickLJH/EmotionBasedMusicRecommender/issues
+[license-shield]: https://img.shields.io/github/license/DerrickLJH/EmotionBasedMusicRecommender.svg?style=for-the-badge
+[license-url]: https://github.com/DerrickLJH/EmotionBasedMusicRecommender/blob/master/LICENSE.txt
 [Flask]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
 [Flask-url]: https://flask.palletsprojects.com/
 [Python]: https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white
