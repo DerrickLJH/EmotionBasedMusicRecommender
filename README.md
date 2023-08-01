@@ -62,7 +62,7 @@ MoodSync uses OpenCV Library to allow users to record a video of their facial ex
 
 ### Built With
 
-[![Flask][Flask]][Flask-url] [![Python][Python]][Python-url] [![OpenCV][OpenCV]][OpenCV-url] [![Tensorflow][Tensorflow]][Tensorflow-url][![MariaDB][MariaDB]][MariaDB-url] ![HTML5] ![JavaScript]
+[![Flask][Flask]][Flask-url] [![Python][Python]][Python-url] [![OpenCV][OpenCV]][OpenCV-url] [![Tensorflow][Tensorflow]][Tensorflow-url] [![MariaDB][MariaDB]][MariaDB-url] ![HTML5] ![JavaScript]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
