@@ -105,6 +105,9 @@ This is an example of how to list things you need to use the software and how to
 
    ![Backend.py Terminal](static/backend.py_terminal.png)
 
+    Should output as:
+
+    ![backend.py Output](static/backend.py_output.png)
 
 
 6. Add your own spotify developer CLIENT_ID and CLIENT_SECRET into the env file.
