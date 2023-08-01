@@ -76,17 +76,9 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* pip
+* Install packages with pip
   ```sh
-  pip install flask
-  pip install python-dotenv
-  pip install requests 
-  pip install pandas
-  pip install mysql-connector-python
-  pip install opencv-python
-  pip install tensorflow
-  pip install matplotlib
-
+  pip install -requirements.txt
   ```
 
 ### Installation
@@ -122,11 +114,10 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-<div style="display: flex;">
-  <img src="static/homepage.png" alt="Image 1" width="33%" />
-  <img src="static/recordingpage.png" alt="Image 2" width="33%" />
-  <img src="static/songsrecopage.png" alt="Image 3" width="33%" />
+<div style="display:flex;">
+  <img src="static/homepage.png" alt="Image 1" width="30%" />
+  <img src="static/recordingpage.png" alt="Image 2" width="30%" />
+  <img src="static/songsrecopage.png" alt="Image 3" width="30%" />
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

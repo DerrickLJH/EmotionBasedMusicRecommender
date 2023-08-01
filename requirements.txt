@@ -1,0 +1,8 @@
+flask
+python-dotenv
+requests
+pandas
+mysql-connector-python
+opencv-python
+matplotlib
+tensorflow
