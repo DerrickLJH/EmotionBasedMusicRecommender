@@ -9,6 +9,12 @@ conn_params = {
     'database': 'dataengproj'
 }
 
+create_db_params = {
+    'user': 'root',
+    'password': 'password',
+    'host': 'localhost'
+}
+
 
 def create_table(conn_params):
     # Create table
@@ -214,7 +220,7 @@ def get_number_of_tables(conn_params):
     return num_tables
 
 
-def create_database(database_name, conn_params):
+def create_database(database_name, create_db_params):
     conn = None
     try:
         print('Connecting to the database...')
@@ -238,7 +244,7 @@ def create_database(database_name, conn_params):
 
 # OPTIONAL : Call the function to create a new database with the name dataengproj (Users can create their own database) 
 # new_database_name = "dataengproj"
-# create_database(new_database_name, conn_params)
+# create_database(new_database_name, create_db_params)
 
 # Run the code
 # create_table(conn_params)
