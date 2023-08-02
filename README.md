@@ -85,57 +85,73 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Clone the repository
+1. Clone the repository:
    ```sh
    git clone https://github.com/DerrickLJH/EmotionBasedMusicRecommender.git
    ```
-2. Install the [ResNet50v2 Model](https://drive.google.com/drive/folders/16DPcK4bTOtkt-1egVX6FDejWzvoRU_in?usp=sharing)
+2. Download and extract the [ResNet50v2 Model](https://drive.google.com/drive/folders/16DPcK4bTOtkt-1egVX6FDejWzvoRU_in?usp=sharing) folder and place in the repository. 
 
-3. Install MariaDB at https://mariadb.org/download
+3. Download and install MariaDB at https://mariadb.org/download, and set up a user.
 
-4. Update the credentials for database in source code
-
-   ![exe-screenshot1]
-
-5. Uncomment lines 244-245 and run the backend.py file. (Remember to comment it back after executing backend.py) 
-
-   ![exe-screenshot2]
-
+4. Update the database credentials in source code obtained from the cloned repository.
+   ```python
+   conn_params = {
+          'user' : 'root',
+          'password': 'password',
+          'host': 'localhost',
+          'database': 'dataengproj'
+   }
+   ```
+   
+5. Uncomment lines 244-245 and run the `backend.py` file. (Remember to comment it back after executing `backend.py`) 
+   ```python 
+   # Run the code
+   create_table(conn_params)
+   insert_values(conn_params)
+   ```
    Open a terminal or command prompt, navigate to the directory containing the backend.py file, and execute the file using the Python interpreter.
-
-   ![Backend.py Terminal](static/backend.py_terminal.png)
-
+   ```shell
+   (venv) PS C:\Users\isaac\PycharmProjects\pythonProject>python backend.py
+   ```
     Should output as:
+   ```shell
+   Connecting to the database...
+   Table created successfully.
+   Database connection closed.
+   Connecting to the database...
+   Data inserted successfully into table.
+   Database connection closed.
+   Connecting to the database...
+   Database connection closed.
+   Number of tables in 'dataengproj': 1
+   
+   Process finished with exit code 0
+   ```
 
-    ![backend.py Output](static/backend.py_output.png)
+6. Enter your Spotify Developer Web API CLIENT_ID and CLIENT_SECRET into the `.env` file.
+   ```shell
+   CLIENT_ID = 'ENTER YOUR CLIENT_ID';
+   CLIENT_SECRET = 'ENTER YOUR CLIENT_SECRET';
+   ```
 
+7. Open a terminal or command prompt, navigate to the directory containing the `main.py` file, and execute the file using the Python interpreter.
 
-6. Add your own spotify developer CLIENT_ID and CLIENT_SECRET into the env file.
-
-   ![api_cred](static/api_cred.png)
-
-7. Open a terminal or command prompt, navigate to the directory containing the main.py file, and execute the file using the Python interpreter.
-
-   ![main.py Terminal](static/main.py_terminal.png)
-
+   ```shell
+   (venv) PS C:\Users\isaac\PycharmProjects\pythonProject>python main.py
+   ```
    Should output as:
-
-   ![main.py Output](static/main.py_output.png)
-
-
-
-
-[//]: # (3. Enter your Spotify Web API in `.env`)
-
-[//]: # (   ```js)
-
-[//]: # (   CLIENT_ID = 'ENTER YOUR CLIENT_ID';)
-
-[//]: # (   CLIENT_SECRET = 'ENTER YOUR CLIENT_SECRET';)
-
-[//]: # ()
-[//]: # (   ```)
-
+   ```shell
+   (venv) PS C:\Users\isaac\PycharmProjects\pythonProject>python main.py
+   File downloaded successfully.
+    * Serving Flask app 'main'
+    * Debug mode: on
+   WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+    * Running on http://127.0.0.1:5000
+   Press CTRL+C to quit
+    * Restarting with watchdog (windowsapi)
+   File downloaded successfully.
+   ```
+   
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -179,8 +195,4 @@ This is an example of how to list things you need to use the software and how to
 [product-screenshot1]: static/homepage.png
 [product-screenshot2]: static/recordingpage.png
 [product-screenshot3]: static/songsrecopage.png
-
-[exe-screenshot1]: static/mariadb_params.png
-[exe-screenshot2]: static/backend.png
-
 
