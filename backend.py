@@ -236,8 +236,8 @@ def create_database(database_name, conn_params):
             print('Database connection closed.')
 
 
-# Call the function to create a new database with the name "new_database"
-# new_database_name = "data_engineering_proj"
+# OPTIONAL : Call the function to create a new database with the name dataengproj (Users can create their own database) 
+# new_database_name = "dataengproj"
 # create_database(new_database_name, conn_params)
 
 # Run the code
