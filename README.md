@@ -97,7 +97,7 @@ This is an example of how to list things you need to use the software and how to
 
    ![exe-screenshot1]
 
-5. Uncomment lines 244-245 and run the backend.py file. 
+5. Uncomment lines 244-245 and run the backend.py file. (Remember to comment it back after executing backend.py) 
 
    ![exe-screenshot2]
 
